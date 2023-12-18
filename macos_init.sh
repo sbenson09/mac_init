@@ -128,6 +128,13 @@ mas install 1357379892 #Menu Bar Controller for Sonos
 echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
 
 
+# Install hyper plugins
+hyper install hyper-snazzy
+hyper install hyperterm-tabs
+hyper install hyperlinks
+hyper install hyper-search
+
+
 # Log in to 1Password
 echo -e $Purple"Logging in to 1Password"$Color_Off
 if [[ $(op account list | grep sbenson@hey.com | wc -l | tr -d ' ') != 1 ]]; then
