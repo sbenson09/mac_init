@@ -1,14 +1,13 @@
 #!/bin/zsh
 
+# Input Variables
 HOSTNAME=sbenson-mba
 
-
+# Colors
 Purple='\033[0;35m'       # Purple
 Green='\033[0;32m'        # Green
 Yellow='\033[0;33m'       # Yellow
 Color_Off='\033[0m'       # Text Reset
-
-
 
 # Set computer's hostname
 echo -e $Purple"Setting computer's hostname"$Color_Off
@@ -109,6 +108,8 @@ brew_apps=(
 	"kubernetes-cli"
 	"ansible"
 	"mas"
+	"pure"
+	"zsh-syntax-highlighting"
 )
 
 for app in "${brew_apps[@]}"; do
@@ -123,6 +124,9 @@ mas install 1357379892 #Menu Bar Controller for Sonos
 # Configure brew autoupdate
 # TO DO
 
+# Configure zsh syntax highlighting
+echo "source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh" >> ${ZDOTDIR:-$HOME}/.zshrc
+
 
 # Log in to 1Password
 echo -e $Purple"Logging in to 1Password"$Color_Off
@@ -134,5 +138,10 @@ fi
 # Import private key from 1Password
 # TO DO
 # echo -e $Purple"Importing private key from 1Password"$Color_Off
+
+# Configure git
+echo -e $Purple"Configuring git"$Color_Off
+git config --global user.name "Sean Benson"
+git config --global user.email "sbenson@hey.com"
 
 echo -e $Green"Init script done"$Color_Off
