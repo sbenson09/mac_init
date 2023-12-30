@@ -66,11 +66,8 @@ brew_cask_apps=(
 	"github"
 	"caffeine"
 	"signal"
-	"aldente"
 	"transmit"
 	"raycast"
-	"sol"
-	"maccy"
 	"tailscale"
 	"diffusionbee"
 	"ferdium"
@@ -85,9 +82,11 @@ brew_cask_apps=(
 	"pocket-casts"
 	"transmission"
 	"grandperspective"
-	"stats"
+	"stats"x
 	"codewhisperer"
-)
+	"postman"
+	"wireshark"
+	"lm-studio"
 
 for app in "${brew_cask_apps[@]}"; do
 	brew install --cask "$app" 2>&1 1>/dev/null
@@ -110,6 +109,9 @@ brew_apps=(
 	"mas"
 	"pure"
 	"zsh-syntax-highlighting"
+	"kubectx"
+	"cirruslabs/cli/tart"
+
 )
 
 for app in "${brew_apps[@]}"; do
@@ -148,7 +150,10 @@ fi
 
 # Configure git
 echo -e $Purple"Configuring git"$Color_Off
+
 git config --global user.name "Sean Benson"
 git config --global user.email "sbenson@hey.com"
 
 echo -e $Green"Init script done"$Color_Off
+
+# Install Japanese keyboard
