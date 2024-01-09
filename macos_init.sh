@@ -87,6 +87,7 @@ brew_cask_apps=(
 	"postman"
 	"wireshark"
 	"lm-studio"
+	"sony-ps-remote-play"
 
 for app in "${brew_cask_apps[@]}"; do
 	brew install --cask "$app" 2>&1 1>/dev/null
@@ -110,8 +111,9 @@ brew_apps=(
 	"pure"
 	"zsh-syntax-highlighting"
 	"kubectx"
+	"multipass"
 	"cirruslabs/cli/tart"
-
+	"dive"
 )
 
 for app in "${brew_apps[@]}"; do
