@@ -114,6 +114,7 @@ brew_apps=(
 	"multipass"
 	"cirruslabs/cli/tart"
 	"dive"
+	"bat"
 )
 
 for app in "${brew_apps[@]}"; do
@@ -159,3 +160,16 @@ git config --global user.email "sbenson@hey.com"
 echo -e $Green"Init script done"$Color_Off
 
 # Install Japanese keyboard
+
+# Configure bat
+echo "
+# Configure bat
+export BAT_THEME='TwoDark'
+alias cat='bat --paging=never'" >> ~/.zshrc
+
+#Configure vim
+echo "\"Enable line numbers
+set number
+\"Enable syntax hightlighting and colorscheme
+colorscheme slate
+syntax on" >> ~/.vimrc
